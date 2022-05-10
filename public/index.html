@@ -14,57 +14,53 @@
     <title>Chat</title>
   </head>
   <body>
-    <div class="w-screen h-screen bg-gray-200 flex justify-center items-center">
-      <div class="w-96 h-fit bg-white">
-        <div
-          class="flex flex-col justify-center items-center w-full rounded-t-lg h-56 bg-gradient-to-r from-purple-500 to-pink-500">
-          <div class="flex flex-col">
+    <div class="section">
+      <div class="block">
+        <div class="header">
+          <div class="header__image">
             <img class="w-24" src="./assets/img/avataaars.png" alt="Avatar" />
-            <i class="fa-solid -mt-3 fa-circle text-green-600"></i>
+            <i class="fa-solid -mt-3 fa-circle header__icon-color-green"></i>
           </div>
-          <div class="text-white font-bold mt-3">Kleber Bernardo</div>
+          <div class="header__title">Kleber Bernardo</div>
         </div>
-        <div class="h-[400px] text-center pt-4 flex flex-col">
-          <div class="text-gray-400 text-sm h-[20px]">Segunda-feira, 09/05</div>
-          <div class="text-gray-400 h-[330px] text-sm overflow-y-auto">
-            <div class="pt-4 w-full flex flex-row">
-              <div class="pl-2 mr-2 w-[50px]">
+        <div class="content">
+          <div class="content__title-day">Segunda-feira, 09/05</div>
+          <div class="content__messages">
+            <div class="content__messages__item">
+              <div class="content__messages__item__img">
                 <img
                   class="w-10"
                   src="./assets/img/avataaars.png"
                   alt="Avatar" />
               </div>
-              <div
-                class="bg-purple-200 w-[334px] rounded-lg mr-2 ml-2 p-4 text-slate-700">
+              <div class="content__messages__item__text--color-purple">
                 Olá, tudo bem? Estava te procurando...
               </div>
             </div>
-            <div class="pt-4 w-full flex flex-row-reverse">
-              <div class="pl-2 mr-2 w-[50px]">
+            <div class="flex-row-reverse content__messages__item">
+              <div class="content__messages__item__img">
                 <img
                   class="w-10"
                   src="./assets/img/avataaars.png"
                   alt="Avatar" />
               </div>
-              <div
-                class="bg-pink-200 w-[334px] rounded-lg mr-2 ml-2 p-4 text-slate-700">
+              <div class="content__messages__item__text--color-pink">
                 Olá, tudo bem? Estava te procurando... Olá, tudo bem? Estava te
                 procurando... Olá, tudo bem? Estava te procurando...
               </div>
             </div>
           </div>
-          <div class="w-full h-[50px] flex border-solid border-t-2">
+          <div class="footer">
             <div class="w-full">
               <input
-                class="py-3 pl-3 w-full text-gray-500 focus:outline-none"
+                class="footer__input"
                 type="text"
                 placeholder="Enviar mensagem..."
                 name="message"
                 id="message" />
             </div>
-            <div class="w-[50px] text-center cursor-pointer">
-              <i
-                class="fa-solid fa-pen-to-square text-gray-300 text-2 mt-4"></i>
+            <div class="footer__block">
+              <i class="fa-solid fa-pen-to-square footer__block__icon"></i>
             </div>
           </div>
         </div>

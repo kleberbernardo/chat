@@ -1,6 +1,16 @@
 # README
 
-Projeto Chat - TailwindCSS + Express + Typescript + Socket.IO
+Projeto Chat
+
+Esse é um projeto de um chat, colocando o usuário publico do seu Github, você consegue se comunica com outro chat aberto.
+
+Nesse projeto eu inserir em conjunto algumas tecnologias para aprimorar a utilização delas.
+
+As tecnologias foram:
+
+- Front: HTML5, CSS (Padrão BEM) e TailwindCSS
+- Backend: NodeJs, Express, TypeScript (Checagem de tipos em RunTime) e Socket.IO
+- Code Style: Eslint (airbnb) e Prettier
 
 ## Start Local
 

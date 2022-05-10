@@ -5,3 +5,71 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
+
+.section {
+  @apply w-screen h-screen bg-gray-200 flex justify-center items-center;
+}
+
+.header {
+  @apply flex flex-col justify-center items-center w-full rounded-t-lg h-56 bg-gradient-to-r from-purple-500 to-pink-500;
+}
+
+.header__icon-color-green {
+  @apply text-green-600;
+}
+
+.header__image {
+  @apply flex flex-col;
+}
+
+.header__title {
+  @apply text-white font-bold mt-3;
+}
+
+.block {
+  @apply w-96 h-fit bg-white;
+}
+
+.content {
+  @apply h-[400px] text-center pt-4 flex flex-col;
+}
+
+.content__title-day {
+  @apply text-gray-400 text-sm h-[20px];
+}
+
+.content__messages {
+  @apply text-gray-400 h-[330px] text-sm overflow-y-auto;
+}
+
+.content__messages__item {
+  @apply pt-4 w-full flex;
+}
+
+.content__messages__item__img {
+  @apply pl-2 mr-2 w-[50px];
+}
+
+.content__messages__item__text--color-purple {
+  @apply bg-purple-200 w-[334px] rounded-lg mr-2 ml-2 p-4 text-slate-700;
+}
+
+.content__messages__item__text--color-pink {
+  @apply bg-pink-200 w-[334px] rounded-lg mr-2 ml-2 p-4 text-slate-700;
+}
+
+.footer {
+  @apply w-full h-[50px] flex border-solid border-t-2;
+}
+
+.footer__input {
+  @apply py-3 pl-3 w-full text-gray-500 focus:outline-none;
+}
+
+.footer__block {
+  @apply w-[50px] text-center cursor-pointer;
+}
+
+.footer__block__icon {
+  @apply text-gray-300 text-[20px] mt-4 mr-2;
+}
