@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,200;1,300&family=Roboto:wght@400;500;700&display=swap');
+    </style>
+    <link rel="stylesheet" href="./assets/css/output.css" />
+    <title>Chat</title>
+  </head>
+  <body>
+    <div class="w-screen h-screen bg-gray-200 flex justify-center items-center">
+      <div class="w-96 h-fit bg-white">
+        <div
+          class="flex flex-col justify-center items-center w-full rounded-t-lg h-56 bg-gradient-to-r from-purple-500 to-pink-500">
+          <div class="flex flex-col">
+            <img class="w-24" src="./assets/img/avataaars.png" alt="Avatar" />
+            <i class="fa-solid -mt-3 fa-circle text-green-600"></i>
+          </div>
+          <div class="text-white font-bold mt-3">Kleber Bernardo</div>
+        </div>
+        <div class="h-[400px] text-center pt-4 flex flex-col">
+          <div class="text-gray-400 text-sm">Segunda-feira, 09/05</div>
+          <div class="grow w-full h-8">
+            <form action="">
+              <input
+                class="border-solid border-2 p-3 w-full"
+                type="text"
+                placeholder="Enviar mensagem..."
+                name="message"
+                id="message" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

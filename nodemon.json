@@ -1,0 +1,8 @@
+{
+  "verbose": true,
+  "ignore": ["node_modules/*"],
+  "watch": ["src/**", "public/**", "*.json"],
+  "ext": "ts json html css",
+  "pollingInterval": 100,
+  "legacyWatch": true
+}
