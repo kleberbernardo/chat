@@ -5,7 +5,7 @@ dotenv.config();
 const Environment = {
   DEV: {
     ENV: process.env.NODE_ENV,
-    PORT: 8080,
+    PORT: 5500,
     PATH_PUBLIC: `${process.cwd()}/public`,
     TOKEN: 'abc',
   },

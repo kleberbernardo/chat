@@ -609,6 +609,7 @@ body {
 }
 
 .footer {
+  margin-top: 0.75rem;
   display: flex;
   height: 50px;
   width: 100%;

@@ -2,6 +2,8 @@
   "compilerOptions": {
     "target": "es2017",
     "module": "CommonJS",
+    "rootDir": "./src/",
+    "outDir": "./public/assets/js/",
     "removeComments": true,
     "noEmitOnError": true,
     "esModuleInterop": true,

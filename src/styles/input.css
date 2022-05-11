@@ -59,7 +59,7 @@ body {
 }
 
 .footer {
-  @apply w-full h-[50px] flex border-solid border-t-2;
+  @apply w-full h-[50px] flex border-solid border-t-2 mt-3;
 }
 
 .footer__input {
