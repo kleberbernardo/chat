@@ -19,7 +19,7 @@ export class Listener {
           console.log(data);
           io.emit('addMessage', data);
         } else {
-          console.log('Dados errados');
+          console.log('Dados errados!');
         }
       });
       socket.on('disconnect', () => {});
