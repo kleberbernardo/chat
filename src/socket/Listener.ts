@@ -4,27 +4,24 @@ import { z } from 'zod';
 import { Types } from '../types/RunTimeTypes';
 
 export class Listener {
-  static dataPing = z.object({
+  static dataMessage = z.object({
     id: Types.Number,
     name: Types.String,
-    online: Types.Boolean,
+    message: Types.String,
+    img_url: Types.String,
   });
 
-  static ping(io: Server) {
+  static sendMessage(io: Server) {
     io.on('connect', (socket: Socket) => {
-      socket.on('ping', (data: z.infer<typeof Listener.dataPing>) => {
-        if (this.dataPing.safeParse(data).success) {
-          console.log('ping...');
-          const dataReturn = data;
-          // data.online = false;
-          dataReturn.online = true;
-          dataReturn.name = 'Kleber Bernardo';
-          socket.emit('pong', dataReturn);
+      socket.emit('connect_finish');
+      socket.on('sendMessage', (data: z.infer<typeof Listener.dataMessage>) => {
+        if (this.dataMessage.safeParse(data).success) {
+          console.log(data);
+          io.emit('addMessage', data);
         } else {
-          socket.emit('error', 'safeParse: Invalid type in dataPong');
+          console.log('Dados errados');
         }
       });
-
       socket.on('disconnect', () => {});
     });
   }

@@ -11,6 +11,10 @@
       @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,200;1,300&family=Roboto:wght@400;500;700&display=swap');
     </style>
     <link rel="stylesheet" href="./assets/css/output.css" />
+    <script
+      src="https://cdn.socket.io/4.5.0/socket.io.min.js"
+      integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k"
+      crossorigin="anonymous"></script>
     <script src="./assets/js/output.js"></script>
     <title>Chat</title>
   </head>
@@ -22,24 +26,11 @@
             <img class="w-24" src="./assets/img/avataaars.png" alt="Avatar" />
             <i class="fa-solid -mt-3 fa-circle header__icon-color-green"></i>
           </div>
-          <div class="header__title">Klebers Bernardo</div>
+          <div class="header__title">Kleber Bernardo</div>
         </div>
         <div class="content">
           <div class="content__title-day">Segunda-feira, 09/05</div>
-          <div class="content__messages">
-            <!-- <div class="flex-row-reverse content__messages__item">
-              <div class="content__messages__item__img">
-                <img
-                  class="w-10"
-                  src="./assets/img/avataaars.png"
-                  alt="Avatar" />
-              </div>
-              <div class="content__messages__item__text--color-pink">
-                Olá, tudo bem? Estava te procurando... Olá, tudo bem? Estava te
-                procurando... Olá, tudo bem? Estava te procurando...
-              </div>
-            </div> -->
-          </div>
+          <div class="content__messages"></div>
           <div class="footer">
             <div class="w-full">
               <input
@@ -49,7 +40,7 @@
                 name="message"
                 id="message" />
             </div>
-            <div class="footer__block" onclick="Chat.addMessage()">
+            <div class="footer__block" onclick="Chat.sendMessage()">
               <i class="fa-solid fa-pen-to-square footer__block__icon"></i>
             </div>
           </div>

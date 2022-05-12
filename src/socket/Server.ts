@@ -12,7 +12,7 @@ export class Server {
     const app = express();
     const server = http.createServer(app);
     const io = Middleware.checkAuthentication(new ServerIO(server));
-    Listener.ping(io);
+    Listener.sendMessage(io);
 
     app.use('/assets', express.static(path.join(Config.PATH_PUBLIC, 'assets')));
 
