@@ -13,11 +13,16 @@ export class Server {
     const server = http.createServer(app);
     const io = Middleware.checkAuthentication(new ServerIO(server));
     Listener.sendMessage(io);
+    Listener.setNewMemberOnline(io);
 
     app.use('/assets', express.static(path.join(Config.PATH_PUBLIC, 'assets')));
 
     app.get('/', (_req, _res) => {
       _res.sendFile(`${path.join(Config.PATH_PUBLIC, 'index.html')}`);
+    });
+
+    app.get('/login', (_req, _res) => {
+      _res.sendFile(`${path.join(Config.PATH_PUBLIC, 'login.html')}`);
     });
 
     server.listen(Config.PORT, () => {

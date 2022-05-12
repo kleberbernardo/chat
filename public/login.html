@@ -22,27 +22,22 @@
     <div class="block-user hidden-block">Limite de usuários em Chat...</div>
     <div class="section">
       <div class="block">
-        <div class="header">
-          <div class="header__image">
-            <img class="w-24" src="./assets/img/avataaars.png" alt="Avatar" />
-            <i class="fa-solid -mt-3 fa-circle header__icon-color-green"></i>
+        <div
+          class="flex-col flex justify-center items-center w-full rounded-lg h-56 bg-gradient-to-r from-purple-500 to-pink-500">
+          <div class="pb-6 text-5xl font-bold text-white opacity-80">
+            Chathub
           </div>
-          <div class="header__title">Kleber Bernardo</div>
-        </div>
-        <div class="content">
-          <div class="content__title-day"></div>
-          <div class="content__messages"></div>
-          <div class="footer">
-            <div class="w-full">
+          <div class="pb-4 px-4 text-justify text-slate-800 opacity-90">
+            Digite o usuário do seu GitHub abaixo e aperte enter:
+          </div>
+          <div class="flex">
+            <div class="mt-2 text-white opacity-80 text-2xl">github.com/</div>
+            <div>
               <input
-                class="footer__input"
+                class="bg-transparent text-white opacity-80 border-purple-400 border-solid border-2 p-2 rounded-lg focus:outline-none w-52"
                 type="text"
-                placeholder="Enviar mensagem..."
-                name="message"
-                id="message" />
-            </div>
-            <div class="footer__block" onclick="Chat.sendMessage()">
-              <i class="fa-solid fa-pen-to-square footer__block__icon"></i>
+                name=""
+                id="" />
             </div>
           </div>
         </div>

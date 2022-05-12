@@ -1,11 +1,12 @@
 // #### Falta
-// Bloqueio para duas pessoas acessarem apenas
-// bloqueio para não mandar msg em branco
 // Tela para entrar com git hub e mostrar fotinha personalizada???????
 var Chat = /** @class */ (function () {
     function Chat() {
-        Chat.sendEnterMessage();
-        Chat.socketClientInit();
+        window.onload = function () {
+            Chat.initChat();
+            Chat.sendEnterMessage();
+            Chat.socketClientInit();
+        };
     }
     Chat.socketClientInit = function () {
         var _this = this;
@@ -20,6 +21,28 @@ var Chat = /** @class */ (function () {
         this.socket.on('connect_finish', function () { });
         this.socket.on('connect_error', function (err) { return console.log(err); });
         this.socket.on('addMessage', function (data) { return _this.addMessage(data); });
+        this.socket.emit('setNewMemberOnline', this.uniqueId);
+        this.socket.on('onlineMembers', function (membersId) { return Chat.checkLimiteMembers(membersId); });
+    };
+    Chat.initChat = function () {
+        var titleDay = document.querySelector('.content__title-day');
+        titleDay && (titleDay.textContent = Chat.dateNow);
+    };
+    Chat.checkLimiteMembers = function (membersIds) {
+        var _this = this;
+        var blockUser = document.querySelector('.block-user');
+        var canAccess = membersIds.filter(function (data) { var _b; return (_b = data.memberId === _this.uniqueId) !== null && _b !== void 0 ? _b : data; });
+        if (membersIds.length === 2 && canAccess.length === 0) {
+            blockUser === null || blockUser === void 0 ? void 0 : blockUser.classList.add('show-block');
+            blockUser === null || blockUser === void 0 ? void 0 : blockUser.classList.remove('hidden-block');
+            if (window.location.pathname !== '/login') {
+                window.location.assign('/login');
+            }
+        }
+        else {
+            blockUser === null || blockUser === void 0 ? void 0 : blockUser.classList.add('hidden-block');
+            blockUser === null || blockUser === void 0 ? void 0 : blockUser.classList.remove('show-block');
+        }
     };
     Chat.sendMessage = function () {
         var messageInput = document.querySelector('#message');
@@ -52,8 +75,15 @@ var Chat = /** @class */ (function () {
     Chat.inverse = true;
     Chat.lastIds = [];
     Chat.uniqueId = Math.floor((1 + Math.random()) * 0x10000);
+    Chat.dateNow = new Date()
+        .toLocaleDateString('pt-br', {
+        weekday: 'long',
+        day: '2-digit',
+        month: '2-digit'
+    })
+        .toUpperCase();
     Chat.addMessage = function (data) {
-        data.message && _a.setMessageInElements(data);
+        data.message.trim() && _a.setMessageInElements(data);
     };
     Chat.setMessageInElements = function (data) {
         Chat.checkMessageAuthor(data.id);

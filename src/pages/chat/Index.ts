@@ -6,8 +6,6 @@ type messageType = {
 };
 
 // #### Falta
-// Bloqueio para duas pessoas acessarem apenas
-// bloqueio para não mandar msg em branco
 // Tela para entrar com git hub e mostrar fotinha personalizada???????
 
 class Chat {
@@ -21,9 +19,20 @@ class Chat {
 
   static socket: any;
 
+  static readonly dateNow: string = new Date()
+    .toLocaleDateString('pt-br', {
+      weekday: 'long',
+      day: '2-digit',
+      month: '2-digit',
+    })
+    .toUpperCase();
+
   constructor() {
-    Chat.sendEnterMessage();
-    Chat.socketClientInit();
+    window.onload = () => {
+      Chat.initChat();
+      Chat.sendEnterMessage();
+      Chat.socketClientInit();
+    };
   }
 
   static socketClientInit() {
@@ -38,6 +47,47 @@ class Chat {
     this.socket.on('connect_finish', () => {});
     this.socket.on('connect_error', (err: any) => console.log(err));
     this.socket.on('addMessage', (data: messageType) => this.addMessage(data));
+    this.socket.emit('setNewMemberOnline', this.uniqueId);
+    this.socket.on(
+      'onlineMembers',
+      (
+        membersId: {
+          socketId: string;
+          memberId: number;
+        }[],
+      ) => Chat.checkLimiteMembers(membersId),
+    );
+  }
+
+  static initChat() {
+    const titleDay: HTMLElement | null = document.querySelector(
+      '.content__title-day',
+    );
+    titleDay && (titleDay.textContent = Chat.dateNow);
+  }
+
+  static checkLimiteMembers(
+    membersIds: {
+      socketId: string;
+      memberId: number;
+    }[],
+  ) {
+    const blockUser: HTMLElement | null = document.querySelector('.block-user');
+
+    const canAccess = membersIds.filter(
+      (data) => data.memberId === this.uniqueId ?? data,
+    );
+
+    if (membersIds.length === 2 && canAccess.length === 0) {
+      blockUser?.classList.add('show-block');
+      blockUser?.classList.remove('hidden-block');
+      if (window.location.pathname !== '/login') {
+        window.location.assign('/login');
+      }
+    } else {
+      blockUser?.classList.add('hidden-block');
+      blockUser?.classList.remove('show-block');
+    }
   }
 
   static sendMessage() {
@@ -65,7 +115,7 @@ class Chat {
   }
 
   static addMessage = (data: messageType) => {
-    data.message && this.setMessageInElements(data);
+    data.message.trim() && this.setMessageInElements(data);
   };
 
   static checkMessageAuthor(id: number) {
