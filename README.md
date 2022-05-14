@@ -23,6 +23,7 @@ Nesse projeto utilizei algumas tecnologias de base, são elas:
 - [x] TypeScript
 - [x] ZOD (TS Run Time)
 - [x] Express
+- [x] Code Style: Eslint (Airbnb) e Prettier
 
 ## 💻 Pré-requisitos
 
