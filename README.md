@@ -1,4 +1,4 @@
-# Chathub
+# ChatHub
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/kleberbernardo/README-template?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/kleberbernardo/README-template?style=for-the-badge)
@@ -12,102 +12,83 @@
 
 > É um projeto focado e indicado para estudos e aperfeiçoamento nas tecnologias trabalhadas. Você também pode utilizar esse projeto para desenvolver aplicações reais, usando a mesma de base.
 
-### :shipit: Tecnologias utilizadas
+### :space_invader: Tecnologias utilizadas
 
 Nesse projeto utilizei algumas tecnologias de base, são elas:
 
 - [x] HTML 5
 - [x] CSS 3
 - [x] Tailwind CSS
-- [ ]
-- [ ] Tarefa 5
+- [x] Socket.IO
+- [x] TypeScript
+- [x] ZOD (TS Run Time)
+- [x] Express
 
 ## 💻 Pré-requisitos
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
-<!---Estes são apenas requisitos de exemplo. Adicionar, duplicar ou remover conforme necessário--->
+- NodeJs instalado.
+- Uma boa IDE. Recomendo VS CODE.
 
-- Você instalou a versão mais recente de `<linguagem / dependência / requeridos>`
-- Você tem uma máquina `<Windows / Linux / Mac>`. Indique qual sistema operacional é compatível / não compatível.
-- Você leu `<guia / link / documentação_relacionada_ao_projeto>`.
+## 🚀 Instalando ChatHub
 
-## 🚀 Instalando <nome_do_projeto>
+Para instalar o ChatHub siga estas etapas:
 
-Para instalar o <nome_do_projeto>, siga estas etapas:
-
-Linux e macOS:
+- Versione o projeto
+- Após versionado, digite o comando abaixo no terminal, dentro da pasta raiz do projeto.
 
 ```
-<comando_de_instalação>
+npm i
 ```
 
-Windows:
+## ☕ Usando ChatHub
+
+Para usar ChatHub, siga estas etapas:
+
+- Digite o comando abaixo no terminal, dentro da pasta raiz para startar o servidor.
 
 ```
-<comando_de_instalação>
+npm run dev:server
 ```
 
-## ☕ Usando <nome_do_projeto>
+- Feito isso acesse hhtp://localhost:5500, e pode brincar com o projeto
 
-Para usar <nome_do_projeto>, siga estas etapas:
+## :flower_playing_cards: Alterando o projeto
+
+Se você desejar alterar ou modificar o projeto em sua máquina, precisará também dos comandos abaixo:
+
+- Para alterar as classes do Tailwind, precisa manter o compilador de pé. Faça isso com o comando abaixo.
 
 ```
-<exemplo_de_uso>
+npm run tw:build:w
 ```
 
-Adicione comandos de execução e exemplos que você acha que os usuários acharão úteis. Fornece uma referência de opções para pontos de bônus!
+- Para alterar o TypeScript do Front, precisa manter o compilador de pé. Faça isso com o comando abaixo.
 
-## 📫 Contribuindo para <nome_do_projeto>
+```
+npm run tsc:chat
+```
 
-<!---Se o seu README for longo ou se você tiver algum processo ou etapas específicas que deseja que os contribuidores sigam, considere a criação de um arquivo CONTRIBUTING.md separado--->
+- O projeto tem controle de padrão de código, com o Eslint. Para checar o padrão, digite o comando abaixo:
 
-Para contribuir com <nome_do_projeto>, siga estas etapas:
+```
+npm run code:style
+```
 
-1. Bifurque este repositório.
-2. Crie um branch: `git checkout -b <nome_branch>`.
-3. Faça suas alterações e confirme-as: `git commit -m '<mensagem_commit>'`
-4. Envie para o branch original: `git push origin <nome_do_projeto> / <local>`
-5. Crie a solicitação de pull.
+- Para subir o servidor Socket.IO, e ficar escutando alterações no código utilize:
 
-Como alternativa, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
+```
+npm run dev:server:w
+```
 
-## 🤝 Colaboradores
+- Se desejar um comando único que já faz tudo isso e fica escutando alterações no código, digite:
 
-Agradecemos às seguintes pessoas que contribuíram para este projeto:
+```
+npm run dev:server:start
+```
 
-<table>
-  <tr>
-    <td align="center">
-      <a href="#">
-        <img src="https://avatars3.githubusercontent.com/u/31936044" width="100px;" alt="Foto do Iuri Silva no GitHub"/><br>
-        <sub>
-          <b>Iuri Silva</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#">
-        <img src="https://s2.glbimg.com/FUcw2usZfSTL6yCCGj3L3v3SpJ8=/smart/e.glbimg.com/og/ed/f/original/2019/04/25/zuckerberg_podcast.jpg" width="100px;" alt="Foto do Mark Zuckerberg"/><br>
-        <sub>
-          <b>Mark Zuckerberg</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#">
-        <img src="https://miro.medium.com/max/360/0*1SkS3mSorArvY9kS.jpg" width="100px;" alt="Foto do Steve Jobs"/><br>
-        <sub>
-          <b>Steve Jobs</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
-
-## 😄 Seja um dos contribuidores<br>
-
-Quer fazer parte desse projeto? Clique [AQUI](CONTRIBUTING.md) e leia como contribuir.
+Porém, o processo de codificação fica um pouco mais lento pela demora no restart automatico.
 
 ## 📝 Licença
 

@@ -4,7 +4,7 @@
     "dev:server": "set NODE_ENV=development&&ts-node ./src/Index.ts",
     "dev:server:w": "nodemon --exec \"npm run dev:server\"",
     "prod:server": "set NODE_ENV=production&&ts-node ./src/Index.ts",
-    "dev:server:start": "nodemon --exec \"npm run code:style && npm run tw:build && npm run dev:server\"",
+    "dev:server:start": "nodemon --exec \"npm run code:style && npm run tw:build && npm run tsc:chat && npm run dev:server\"",
     "code:style": "npx eslint --ext ts,tsx src",
     "tw:build": "npx tailwindcss -i ./src/styles/input.css -o ./public/assets/css/output.css",
     "tw:build:w": "npx tailwindcss -i ./src/styles/input.css -o ./public/assets/css/output.css --watch",
