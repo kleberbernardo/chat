@@ -1,16 +1,14 @@
 # Chathub
 
-<!---Esses são exemplos. Veja https://shields.io para outras pessoas ou para personalizar este conjunto de escudos. Você pode querer incluir dependências, status do projeto e informações de licença aqui--->
-
 ![GitHub repo size](https://img.shields.io/github/repo-size/kleberbernardo/README-template?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/kleberbernardo/README-template?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/github/forks/kleberbernardo/README-template?style=for-the-badge)
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/kleberbernardo/README-template?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/kleberbernardo/README-template?style=for-the-badge)
 
-<img src="exemplo-image.png" alt="exemplo imagem">
+<img src="https://github.com/kleberbernardo/chat/blob/main/public/assets/img/ilutration.png" alt="Chathub">
 
-> Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
+> Esse é um projeto de um Chat, chamado Chathub. Nele você coloca o seu usuário do Github e copode se comunicar em tempo real com outro Chat aberto. É um projeto focado e indicado para estudos e aperfeiçoamento nas tecnologias. Você também pode utilizar para desenvolver aplicações reais através dessa base.
 
 ### Ajustes e melhorias
 
