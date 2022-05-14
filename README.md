@@ -8,16 +8,18 @@
 
 <img src="https://github.com/kleberbernardo/chat/blob/main/public/assets/img/ilutration.png" alt="Chathub">
 
-> Esse é um projeto de um Chat, chamado Chathub. Nele você coloca o seu usuário do Github e copode se comunicar em tempo real com outro Chat aberto. É um projeto focado e indicado para estudos e aperfeiçoamento nas tecnologias. Você também pode utilizar para desenvolver aplicações reais através dessa base.
+> Esse é um projeto de um Chat, chamado Chathub. Nele você coloca o seu usuário do Github e pode se comunicar em tempo real com outro Chat aberto.
 
-### Ajustes e melhorias
+> É um projeto focado e indicado para estudos e aperfeiçoamento nas tecnologias trabalhadas. Você também pode utilizar esse projeto para desenvolver aplicações reais, usando a mesma de base.
 
-O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
+### :shipit: Tecnologias utilizadas
 
-- [x] Tarefa 1
-- [x] Tarefa 2
-- [x] Tarefa 3
-- [ ] Tarefa 4
+Nesse projeto utilizei algumas tecnologias de base, são elas:
+
+- [x] HTML 5
+- [x] CSS 3
+- [x] Tailwind CSS
+- [ ]
 - [ ] Tarefa 5
 
 ## 💻 Pré-requisitos
