@@ -19,16 +19,18 @@
     <title>Chat</title>
   </head>
   <body>
-    <div class="block-user hidden-block">Limite de usuários em Chat...</div>
+    <div class="block-user hidden-block z-50">
+      Limite de usuários em Chat...
+    </div>
     <div class="section">
       <div class="block">
         <div
-          class="flex-col flex justify-center items-center w-full rounded-lg h-56 bg-gradient-to-r from-purple-500 to-pink-500">
+          class="flex-col flex justify-center items-center w-full rounded-lg h-72 bg-gradient-to-r from-purple-500 to-pink-500">
           <div class="pb-6 text-5xl font-bold text-white opacity-80">
             Chathub
           </div>
           <div class="pb-4 px-4 text-justify text-slate-800 opacity-90">
-            Digite o usuário do seu GitHub abaixo e aperte enter:
+            Digite o usuário do seu GitHub abaixo:
           </div>
           <div class="flex">
             <div class="mt-2 text-white opacity-80 text-2xl">github.com/</div>
@@ -37,8 +39,15 @@
                 class="bg-transparent text-white opacity-80 border-purple-400 border-solid border-2 p-2 rounded-lg focus:outline-none w-52"
                 type="text"
                 name=""
-                id="" />
+                id="github_user" />
             </div>
+          </div>
+          <div class="mt-6">
+            <input
+              class="p-3 px-16 rounded-lg font-bold cursor-pointer shadow-lg bg-gradient-to-r text-gray-700 from-pink-400 to-purple-500 transition-all hover:scale-110"
+              type="button"
+              value="ENTRAR AGORA"
+              onclick="Chat.enterTheChat()" />
           </div>
         </div>
       </div>

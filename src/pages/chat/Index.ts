@@ -17,6 +17,11 @@ class Chat {
 
   static uniqueId: number = Math.floor((1 + Math.random()) * 0x10000);
 
+  static profile: {
+    img_url: string;
+    userName: string;
+  };
+
   static socket: any;
 
   static readonly dateNow: string = new Date()
@@ -64,6 +69,62 @@ class Chat {
       '.content__title-day',
     );
     titleDay && (titleDay.textContent = Chat.dateNow);
+
+    Chat.checkUSerParam();
+  }
+
+  static async enterTheChat() {
+    const githubUser: HTMLInputElement | null =
+      document.querySelector('#github_user');
+
+    if (githubUser?.value && githubUser?.value.trim() !== '') {
+      window.location.assign(`/?user=${githubUser.value}`);
+    }
+  }
+
+  static async loadChat(user: string | null) {
+    try {
+      const response = await fetch(`https://api.github.com/users/${user}`);
+      const data = await response.json();
+
+      this.profile = {
+        img_url: data.avatar_url,
+        userName: data.name,
+      };
+
+      const imgAvatar: HTMLImageElement | null =
+        document.querySelector('#img_url_avatar');
+
+      imgAvatar && (imgAvatar.src = data.avatar_url);
+
+      const userName: HTMLElement | null = document.querySelector('#user_name');
+
+      userName && (userName.textContent = data.name);
+
+      if (window.location.pathname === '/login') {
+        window.location.assign('/');
+      }
+    } catch (error) {
+      // eslint-disable-next-line no-alert
+      alert('Ocorreu um errro. Verifique o usuário ou tente mais tarde!');
+      if (window.location.pathname !== '/login') {
+        window.location.assign('/login');
+      }
+      console.log('Error API: ', error);
+    }
+  }
+
+  static checkUSerParam() {
+    if (window.location.pathname !== '/login') {
+      const urlParams: URLSearchParams = new URLSearchParams(
+        window.location.search,
+      );
+      const user: string | null = urlParams.get('user');
+
+      !user && !this.profile?.img_url
+        ? window.location.assign('/login')
+        : Chat.loadChat(user);
+    }
   }
 
   static checkLimiteMembers(
@@ -96,9 +157,9 @@ class Chat {
 
     const data: messageType = {
       id: this.uniqueId,
-      name: 'Kleber',
+      name: this.profile.userName,
       message: messageInput?.value || '',
-      img_url: 'http://127.0.0.1:5500/public/assets/img/avataaars.png',
+      img_url: this.profile.img_url,
     };
 
     messageInput && (messageInput.value = '');
@@ -137,7 +198,7 @@ class Chat {
     } content__messages__item">
         <div class="content__messages__item__img">
         <img
-            class="w-10"
+            class="content__messages__item__img_"
             src="${data.img_url}"
             alt="Avatar" />
         </div>
